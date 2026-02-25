@@ -1,5 +1,4 @@
-price.addEventListener("input", async () => {
-
+async function main() {
     let priceUSD = document.getElementById("price").value.replace(/[^0-9]/g, '');
     let kg = document.getElementById("cat").value;
     let results = document.getElementById("results");
@@ -29,7 +28,7 @@ price.addEventListener("input", async () => {
             <strong>სულ: ${priceGel + ganbajebaPrice + transport}₾</strong>
         </div>
     `;
-});
+}
 
 async function getCurrency() {
     let url = "https://open.er-api.com/v6/latest/USD";
@@ -43,3 +42,6 @@ async function getCurrency() {
         return null;
     }
 }
+
+price.addEventListener("input", main);
+cat.addEventListener("change", main);
