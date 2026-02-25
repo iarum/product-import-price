@@ -1,0 +1,74 @@
+:root {
+    --main-color: #000;
+    --border-color: #ccc;
+    --border-radius: 12px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'de';
+}
+
+@font-face {
+    font-family: 'de';
+    src: url('font/bpg_dejavu_sans.otf');
+}
+
+body {
+    background-color: #f5f5f5;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.form {
+    display: flex;
+    gap: 10px;
+}
+
+input, select {
+    width: 100%;
+    padding: 10px 20px;
+    border: none;
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+}
+
+input:focus {
+    outline: none;
+}
+
+
+.mb-20 {
+    margin-bottom: 20px;
+}
+
+.my-20 {
+    margin: 20px 0;
+    border: 1px solid var(--border-color);
+}
+
+.tc {
+    text-align: center;
+}
+
+#results {
+    margin-top: 20px;
+    padding: 10px 20px;
+    border: 2px dashed var(--border-color);
+    border-radius: var(--border-radius);
+    background-color: #fff;
+}
+
+#results div:first-child {
+    margin-top: 10px;
+}
+
+#results div {
+    margin-bottom: 10px;
+}
