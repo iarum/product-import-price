@@ -25,7 +25,7 @@ async function main() {
         <div>განბაჟება: ${ganbajeba ? "კი (" + ganbajebaPrice + "₾)" : "არა"}</div>
         <div>ტრანსპორტირება: ${transport}₾</div>
         <div>
-            <strong>სულ: ${priceGel + ganbajebaPrice + transport}₾</strong>
+            <strong>სულ: ${(priceGel + ganbajebaPrice + transport).toFixed(2)}₾</strong>
         </div>
     `;
 }
