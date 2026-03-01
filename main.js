@@ -8,7 +8,6 @@ async function main() {
     // validation
     if (priceUSD < 0) priceUSD = 0;
     if (priceUSD > 1000000) priceUSD = 1000000;
-
     if (kg != 0) transport = 9 * kg;
 
     // get API rate
@@ -16,14 +15,16 @@ async function main() {
 
     rate = parseFloat(rate.toFixed(2));
     let priceGel = parseFloat((priceUSD * rate).toFixed(2));
+    let transportPrice = parseFloat((transport * rate).toFixed(2));
     let ganbajebaPrice = parseFloat((priceGel * 0.18).toFixed(2));
 
     if (priceGel >= 300) ganbajeba = true;
+    if (kg == 0) transportPrice = parseFloat((transport).toFixed(2));
 
     results.innerHTML = `
         <div>${priceUSD}$ = ${priceGel}₾</div>
         <div>განბაჟება: ${ganbajeba ? "კი (" + ganbajebaPrice + "₾)" : "არა"}</div>
-        <div>ტრანსპორტირება: ${transport}₾</div>
+        <div>ტრანსპორტირება: ${transportPrice}₾</div>
         <div>
             <strong>სულ: ${(priceGel + ganbajebaPrice + transport).toFixed(2)}₾</strong>
         </div>
